@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Still Love Your Ex?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 1in; /* Creates a 1-inch space between buttons */
+        }
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+            display: inline-block;
+            min-width: 100px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Do you still love your ex?</h2>
+    <div class="container">
+        <div class="box">
+            <button id="noButton" onclick="moveNo()">No</button>
+        </div>
+        <div class="box">
+            <button onclick="showMessage()">yes</button>
+        </div>
+    </div>
+    <p id="message"></p>
+
+    <script>
+        function moveNo() {
+            let noButton = document.getElementById("noButton");
+            let newX = Math.random() * (window.innerWidth - 150);
+            let newY = Math.random() * (window.innerHeight - 150);
+
+            noButton.style.position = "absolute";
+            noButton.style.left = newX + "px";
+            noButton.style.top = newY + "px";
+        }
+
+        function showMessage() {
+            document.getElementById("message").innerText = "Congratulations! You still didnt move on.";
+        }
+    </script>
+
+</body>
+</html>
